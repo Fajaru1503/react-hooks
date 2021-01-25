@@ -24,7 +24,10 @@ const Todo = (props) => {
       .catch((error) => {
         console.log(error);
       });
-  });
+    return () => {
+      console.log("cleanup");
+    };
+  }, []);
 
   const inputChangeHandler = (event) => {
     setTodoName(event.target.value);
